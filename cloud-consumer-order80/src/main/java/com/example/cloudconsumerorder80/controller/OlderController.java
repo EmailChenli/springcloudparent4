@@ -13,7 +13,9 @@ import java.util.List;
 @Slf4j
 @RequestMapping("older80")
 public class OlderController {
-    public static final  String PEYMENT_URL ="http://localhost:8001";
+    //public static final  String PEYMENT_URL ="http://localhost:8001";
+    public static final  String PEYMENT_URL ="http://CLOUD-SERVICE-PAYMENT";
+
     @Resource
     private RestTemplate restTemplate;
 
@@ -31,7 +33,7 @@ public class OlderController {
 
     @GetMapping("findAll")
     public CommonResult<List<Payment>> findAll(){
-        return  restTemplate.getForObject(PEYMENT_URL+"payment/findAll",CommonResult.class);
+        return  restTemplate.getForObject(PEYMENT_URL+"/payment/findAll",CommonResult.class);
     }
 
 }
